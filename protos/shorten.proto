@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+service ShortenService {
+  // Create a shortened url.
+  rpc CreateUrl(CreateUrlReq) returns (CreateUrlRes);
+  // Get a shortened url.
+  rpc GetUrl(GetUrlReq) returns (Url);
+}
+
+message CreateUrlReq {
+  string url = 1;
+  int64 keep_alive = 2;
+}
+
+message CreateUrlRes {
+  string id = 1;
+}
+
+message GetUrlReq {
+  string id = 1;
+}
+
+message Url {
+  string id = 1;
+  string url = 2;
+  int64 keep_alive = 3;
+}

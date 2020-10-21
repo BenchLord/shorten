@@ -12,6 +12,9 @@ import (
 	"shorten/server/adapters"
 )
 
+// This should really be a flag on the server command
+// instead of a seperate command but not that important.
+
 var RedisCmd = &cobra.Command{
 	Use:   "redis",
 	Short: "starts the shorten service with redis storage",
